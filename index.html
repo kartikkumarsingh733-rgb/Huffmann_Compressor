@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Huffman file compressor</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Huffman file compressor</h1>
+  <p class="lede">Compress PDFs, Word documents and images right in your browser. Files never leave your device.</p>
+
+  <div class="modes" role="group" aria-label="Mode">
+    <button type="button" data-mode="compress" aria-pressed="true">Compress</button>
+    <button type="button" data-mode="decompress" aria-pressed="false">Decompress</button>
+  </div>
+
+  <label class="drop" id="drop">
+    <input type="file" id="file" accept=".pdf,.docx,image/*">
+    <strong id="dropTitle">Choose a file to compress</strong>
+    <span id="dropHint">or drop it here. PDF, DOCX, PNG, JPG, WebP.</span>
+  </label>
+
+  <p id="error" class="error" role="alert" hidden></p>
+
+  <section id="result" class="result" aria-live="polite" hidden>
+    <p class="filename" id="resName"></p>
+    <div class="row">
+      <span id="labelA">Original</span><span class="size" id="sizeA"></span>
+      <div class="track"><div class="fill base" id="barA"></div></div>
+    </div>
+    <div class="row">
+      <span id="labelB">Compressed</span><span class="size" id="sizeB"></span>
+      <div class="track"><div class="fill" id="barB"></div></div>
+    </div>
+    <p class="summary" id="summary"></p>
+    <a class="download" id="download" href="#">Download</a>
+  </section>
+
+  <p class="foot">Compressed files use the .huff format and can only be restored with this tool.</p>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
